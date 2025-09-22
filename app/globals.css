@@ -1,0 +1,135 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142 69% 58%; /* Primary green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 30% 95%; /* Light green */
+    --secondary-foreground: 142 69% 20%;
+    --muted: 142 20% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 142 40% 90%;
+    --accent-foreground: 142 69% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 142 30% 82%;
+    --input: 142 30% 90%;
+    --ring: 142 69% 58%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 69% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 30% 15%;
+    --secondary-foreground: 142 30% 85%;
+    --muted: 142 30% 15%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 142 30% 18%;
+    --accent-foreground: 142 30% 85%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 142 30% 18%;
+    --input: 142 30% 18%;
+    --ring: 142 69% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for video background */
+.hero-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(21, 128, 61, 0.4) 100%);
+}
+
+/* Puzzle piece decorations */
+.puzzle-piece {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%2334d399' fill-opacity='0.1' d='M50 0c-5 0-9 4-9 9 0 3-2 5-5 5s-5-2-5-5c0-5-4-9-9-9H0v22c0 5 4 9 9 9 3 0 5 2 5 5s-2 5-5 5c-5 0-9 4-9 9v50h22c5 0 9-4 9-9 0-3 2-5 5-5s5 2 5 5c0 5 4 9 9 9h50V78c0-5-4-9-9-9-3 0-5-2-5-5s2-5 5-5c5 0 9-4 9-9V0H50z'/%3E%3C/svg%3E");
+}
+
+/* Animation for counting numbers */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.count-animation {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+/* Hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Insurance grid specific styles */
+.insurance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insurance-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease;
+  min-height: 120px;
+}
+
+.insurance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgb(0 0 0 / 0.1);
+}
