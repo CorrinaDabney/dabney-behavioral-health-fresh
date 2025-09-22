@@ -86,3 +86,4 @@ For questions about this website, contact Dabney Behavioral Health at info@dbhhc
 ---
 *Built with ❤️ for mental health accessibility and LGBTQ+ inclusive care*
 # Trigger Vercel deployment with proper Next.js configuration
+Removed vercel.json to use Vercel defaults
