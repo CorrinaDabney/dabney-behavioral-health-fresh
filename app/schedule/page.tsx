@@ -7,7 +7,7 @@ export default function SchedulePage() {
       <section className="py-16 bg-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-green-900 mb-6">
-            Schedule Consultation
+            New Patient Forms
           </h1>
           <p className="text-xl text-green-700 mb-8">
             Take the first step towards your mental health journey. Book a consultation with our compassionate team.
@@ -36,7 +36,7 @@ export default function SchedulePage() {
                 height="600"
                 frameBorder="0"
                 style={{ border: 'none' }}
-                title="Schedule Consultation Form"
+                title="New Patient Forms"
                 className="rounded-lg"
               />
             </div>

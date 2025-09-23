@@ -118,7 +118,7 @@ export default function ClinicalServicesPage() {
               asChild
             >
               <Link href="/schedule">
-                Schedule Consultation
+                New Patient Forms
               </Link>
             </Button>
           </div>

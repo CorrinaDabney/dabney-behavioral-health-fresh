@@ -40,7 +40,7 @@ export function CTASection({ showViewServices = true, variant = 'default' }: CTA
                 asChild
               >
                 <Link href="/schedule">
-                  Schedule Consultation
+                  New Patient Forms
                 </Link>
               </Button>
             </>
@@ -52,7 +52,7 @@ export function CTASection({ showViewServices = true, variant = 'default' }: CTA
                 asChild
               >
                 <Link href="/schedule">
-                  Schedule Consultation
+                  New Patient Forms
                 </Link>
               </Button>
               {showViewServices && (

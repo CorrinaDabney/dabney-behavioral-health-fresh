@@ -84,7 +84,7 @@ export function InsuranceAccepted() {
               href="/schedule"
               className="inline-flex items-center justify-center px-6 py-3 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition-colors"
             >
-              Schedule Consultation
+              New Patient Forms
             </a>
           </div>
         </div>

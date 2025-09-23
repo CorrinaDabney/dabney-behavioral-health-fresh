@@ -59,7 +59,7 @@ export function HeroVideo() {
               asChild
             >
               <Link href="/schedule">
-                Schedule Consultation
+                New Patient Forms
               </Link>
             </Button>
             <Button

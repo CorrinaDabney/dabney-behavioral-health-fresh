@@ -74,7 +74,7 @@ export function Header() {
               className="ml-4 bg-green-600 hover:bg-green-700"
             >
               <Link href="/schedule">
-                Schedule Consultation
+                New Patient Forms
               </Link>
             </Button>
           </nav>
@@ -115,7 +115,7 @@ export function Header() {
                   className="w-full bg-green-600 hover:bg-green-700"
                 >
                   <Link href="/schedule">
-                    Schedule Consultation
+                    New Patient Forms
                   </Link>
                 </Button>
               </div>
