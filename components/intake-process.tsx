@@ -112,7 +112,7 @@ export function IntakeProcess() {
                 asChild
               >
                 <Link href="/schedule">
-                  Schedule Your Consultation
+                  New Patient Forms
                 </Link>
               </Button>
               <Button
