@@ -21,3 +21,14 @@ out
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.abacus.donotdelete
+server.log
+
+# Log files
+*.log
+dev-server.log
+prod-server.log
+server.log
+
+# Temp directories
+temp_restructure/
