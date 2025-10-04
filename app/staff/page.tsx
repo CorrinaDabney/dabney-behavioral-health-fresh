@@ -11,13 +11,6 @@ const staffMembers = [
     description: 'Clinical Director with extensive experience in behavioral health and mental wellness.'
   },
   {
-    name: 'Dr. Cynthia Dabney',
-    title: 'MBA, QMHP',
-    phone: '(773) 651-6809',
-    email: null,
-    description: 'Qualified Mental Health Professional specializing in comprehensive care approaches.'
-  },
-  {
     name: 'Ms. Jennifer Hayden',
     title: 'QMHP – Clinical Supervisor',
     phone: '(773) 885-1303',
