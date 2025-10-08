@@ -72,15 +72,7 @@ export function HeroVideo() {
                 Learn More
               </Link>
             </Button>
-            <Button
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
-              asChild
-            >
-              <a href="https://dbhca.org" target="_blank" rel="noopener noreferrer">
-                California Site
-              </a>
-            </Button>
+
           </div>
         </div>
       </div>
