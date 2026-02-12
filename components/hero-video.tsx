@@ -6,76 +6,51 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react'
 import Link from 'next/link'
 
 export function HeroVideo() {
-  const backgroundVideoRef = useRef<HTMLVideoElement>(null)
-  const speakerVideoRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
-    // Start both videos
-    if (backgroundVideoRef.current) {
-      backgroundVideoRef.current.play().catch(console.error)
-    }
-    if (speakerVideoRef.current) {
-      speakerVideoRef.current.play().catch(console.error)
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.error)
     }
   }, [])
 
   const togglePlay = () => {
-    if (backgroundVideoRef.current && speakerVideoRef.current) {
+    if (videoRef.current) {
       if (isPlaying) {
-        backgroundVideoRef.current.pause()
-        speakerVideoRef.current.pause()
+        videoRef.current.pause()
       } else {
-        backgroundVideoRef.current.play()
-        speakerVideoRef.current.play()
+        videoRef.current.play()
       }
       setIsPlaying(!isPlaying)
     }
   }
 
   const toggleMute = () => {
-    if (speakerVideoRef.current) {
-      speakerVideoRef.current.muted = !isMuted
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
       setIsMuted(!isMuted)
     }
   }
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video - Waterfall */}
+      {/* Single composited hero video with person and waterfall background */}
       <video
-        ref={backgroundVideoRef}
+        ref={videoRef}
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/assets/waterfall-hero-video.mp4" type="video/mp4" />
+        <source src="/assets/dabney-hero-composited.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 hero-overlay" />
-
-      {/* Speaker Video - with white background removed using mix-blend-mode */}
-      <div className="absolute right-0 bottom-0 w-[40%] h-[80%] flex items-end justify-end pointer-events-none">
-        <video
-          ref={speakerVideoRef}
-          autoPlay
-          muted={isMuted}
-          loop
-          playsInline
-          className="h-full w-auto object-contain"
-          style={{ 
-            mixBlendMode: 'multiply',
-            filter: 'contrast(1.1) brightness(1.05)'
-          }}
-        >
-          <source src="/assets/dabney-speaker.mp4" type="video/mp4" />
-        </video>
-      </div>
+      {/* Subtle overlay for text readability - reduced opacity to keep person visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
