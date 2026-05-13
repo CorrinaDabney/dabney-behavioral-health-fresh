@@ -1,41 +1,31 @@
 
-import { Phone, Mail, User } from 'lucide-react'
+import { Mail, User } from 'lucide-react'
 import { CTASection } from '@/components/cta-section'
 
 const staffMembers = [
   {
     name: 'Dr. Corey Dabney',
     title: 'Ph.D., MBA, LPHA - Clinical Director',
-    phone: '(773) 651-6809',
-    email: null,
     description: 'Clinical Director with extensive experience in behavioral health and mental wellness.'
   },
   {
     name: 'Ms. Jennifer Hayden',
     title: 'QMHP – Clinical Supervisor',
-    phone: '(773) 885-1303',
-    email: 'jennifer.hayden@dbhhc.org',
     description: 'Clinical Supervisor overseeing therapeutic services and staff development.'
   },
   {
     name: 'Mr. Derrick Wilson',
     title: 'MHP - Quality Assurance Supervisor',
-    phone: '(773) 299-4191',
-    email: 'derrick.wilson@dbhhc.org',
     description: 'Quality Assurance Supervisor ensuring excellence in service delivery.'
   },
   {
     name: 'Mrs. Delia Delgado',
     title: 'Administrative Liaison',
-    phone: '(773) 939-2863',
-    email: 'delia.delgado@dbhhc.org',
     description: 'Administrative Liaison coordinating patient care and office operations.'
   },
   {
     name: 'Ms. Lisa Radford',
     title: 'MHP - Mental Health Coordinator',
-    phone: '(773) 299-4190',
-    email: 'lisa.radford@dbhhc.org',
     description: 'Mental Health Coordinator facilitating comprehensive treatment planning.'
   },
 ]
@@ -85,26 +75,14 @@ export default function StaffPage() {
                   {/* Contact Information */}
                   <div className="space-y-3">
                     <div className="flex items-center justify-center space-x-2 text-gray-700">
-                      <Phone className="w-4 h-4 text-green-600" />
-                      <a 
-                        href={`tel:${member.phone.replace(/\D/g, '')}`}
-                        className="hover:text-green-600 transition-colors"
+                      <Mail className="w-4 h-4 text-green-600" />
+                      <a
+                        href="mailto:info@dbhhc.org"
+                        className="hover:text-green-600 transition-colors text-sm"
                       >
-                        {member.phone}
+                        info@dbhhc.org
                       </a>
                     </div>
-                    
-                    {member.email && (
-                      <div className="flex items-center justify-center space-x-2 text-gray-700">
-                        <Mail className="w-4 h-4 text-green-600" />
-                        <a 
-                          href={`mailto:${member.email}`}
-                          className="hover:text-green-600 transition-colors text-sm"
-                        >
-                          {member.email}
-                        </a>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
