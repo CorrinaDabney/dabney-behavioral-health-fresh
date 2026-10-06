@@ -18,6 +18,8 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { CTASection } from '@/components/cta-section'
+import { FormDisclaimer } from '@/components/form-disclaimer'
+import { APPLY_NOW_URL } from '@/lib/form-links'
 
 const programHighlights = [
   {
@@ -79,7 +81,6 @@ const startDates = [
 export default function InternshipPage() {
   const [videoUrl, setVideoUrl] = useState('')
   const [showVideo, setShowVideo] = useState(false)
-  const [showApplicationModal, setShowApplicationModal] = useState(false)
 
   const handleVideoSubmit = () => {
     if (videoUrl.trim()) {
@@ -321,13 +322,14 @@ export default function InternshipPage() {
             </div>
 
             <div className="mt-8 text-center">
-              <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 px-8 py-4"
-                onClick={() => setShowApplicationModal(true)}
-              >
-                Apply Now
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 px-8 py-4" asChild>
+                <a href={APPLY_NOW_URL} target="_blank" rel="noopener noreferrer">
+                  Apply Now
+                </a>
               </Button>
+              <div className="mt-4 flex justify-center">
+                <FormDisclaimer className="text-center" />
+              </div>
             </div>
           </div>
         </div>
@@ -356,35 +358,6 @@ export default function InternshipPage() {
 
       {/* CTA */}
       <CTASection showViewServices={false} />
-
-      {/* Application Modal */}
-      {showApplicationModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden relative">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-xl font-semibold text-gray-900">
-                Internship/Practicum Application
-              </h3>
-              <button
-                onClick={() => setShowApplicationModal(false)}
-                className="text-gray-400 hover:text-gray-600 p-1"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="h-[600px] overflow-auto">
-              <iframe
-                src="https://form.jotform.com/252379303634155"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                scrolling="auto"
-                title="Internship Application Form"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

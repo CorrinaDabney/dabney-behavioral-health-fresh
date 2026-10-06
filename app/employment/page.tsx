@@ -2,6 +2,8 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { CTASection } from '@/components/cta-section'
+import { FormDisclaimer } from '@/components/form-disclaimer'
+import { APPLY_NOW_URL } from '@/lib/form-links'
 
 const positions = [
   {
@@ -79,14 +81,14 @@ export default function EmploymentPage() {
                       {position.type}
                     </p>
                   </div>
-                  <Button
-                    className="bg-green-600 hover:bg-green-700 mt-4 md:mt-0"
-                    asChild
-                  >
-                    <Link href="/apply">
-                      Apply Now
-                    </Link>
-                  </Button>
+                  <div className="mt-4 md:mt-0 flex flex-col md:items-end gap-2">
+                    <Button className="bg-green-600 hover:bg-green-700" asChild>
+                      <a href={APPLY_NOW_URL} target="_blank" rel="noopener noreferrer">
+                        Apply Now
+                      </a>
+                    </Button>
+                    <FormDisclaimer className="md:text-right" />
+                  </div>
                 </div>
 
                 <div>
