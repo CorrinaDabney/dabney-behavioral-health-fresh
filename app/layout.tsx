@@ -5,6 +5,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { TestBanner } from '@/components/test-banner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
+        "min-h-screen bg-background font-sans antialiased pt-8",
         inter.className
       )}>
+        {/* PREVIEW ONLY: moves the fixed header down so the TEST SITE bar fits above it */}
+        <style>{`header.fixed{top:2rem !important}`}</style>
+        <TestBanner />
         <Header />
         <main className="min-h-screen">
           {children}
