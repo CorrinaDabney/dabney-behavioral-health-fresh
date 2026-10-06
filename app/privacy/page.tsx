@@ -115,13 +115,10 @@ export default function PrivacyPage() {
         </p>
 
         <h2 className="text-2xl font-semibold text-green-900 mt-8 mb-3">Website visits</h2>
-        {/* TODO before merging: replace the bracketed sentence below with Derrick's choice after the
-            tracking check (Go-Live item C-3): either "We do not use advertising or tracking tools on
-            our website." or a list of the tools found. Do not publish with the brackets. */}
         <p className="mb-4">
           Like most websites, ours may record basic technical information such as your browser type and
-          the pages you visit. We do not use this information to identify you. [Confirm with the website
-          provider whether analytics or tracking tools are used, and list them here.]
+          the pages you visit. We do not use this information to identify you. We do not use tracking
+          tools on our website.
         </p>
 
         <h2 className="text-2xl font-semibold text-green-900 mt-8 mb-3">Your rights and questions</h2>
