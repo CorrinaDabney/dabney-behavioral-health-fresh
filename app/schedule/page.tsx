@@ -1,5 +1,6 @@
-
-
+import { Button } from '@/components/ui/button'
+import { FormDisclaimer } from '@/components/form-disclaimer'
+import { NEW_PATIENT_INTAKE_URL, FAMILY_UPLOAD_URL } from '@/lib/form-links'
 export default function SchedulePage() {
   return (
     <div className="pt-20">
@@ -15,7 +16,7 @@ export default function SchedulePage() {
         </div>
       </section>
 
-      {/* Jotform Embed */}
+      {/* Secure form link */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
@@ -28,17 +29,18 @@ export default function SchedulePage() {
               </p>
             </div>
 
-            {/* Jotform iframe */}
-            <div className="w-full min-h-[600px]">
-              <iframe 
-                src="https://form.jotform.com/252375344634156"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                style={{ border: 'none' }}
-                title="New Patient Forms"
-                className="rounded-lg"
-              />
+            <div className="flex flex-col items-center gap-4 text-center">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 px-8" asChild>
+                <a href={NEW_PATIENT_INTAKE_URL} target="_blank" rel="noopener noreferrer">
+                  Open the New Patient Intake Form
+                </a>
+              </Button>
+              <FormDisclaimer />
+              <Button size="lg" variant="outline" className="border-green-600 text-green-700 px-8" asChild>
+                <a href={FAMILY_UPLOAD_URL} target="_blank" rel="noopener noreferrer">
+                  Upload documents
+                </a>
+              </Button>
             </div>
           </div>
         </div>

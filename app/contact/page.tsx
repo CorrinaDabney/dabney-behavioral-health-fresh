@@ -1,4 +1,6 @@
-
+import { Button } from '@/components/ui/button'
+import { FormDisclaimer } from '@/components/form-disclaimer'
+import { QUICK_REFERRAL_URL } from '@/lib/form-links'
 export default function ContactPage() {
   return (
     <div className="pt-20">
@@ -14,7 +16,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Jotform Embed */}
+      {/* Secure form link */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
@@ -23,21 +25,17 @@ export default function ContactPage() {
                 Contact Form
               </h2>
               <p className="text-gray-600">
-                Fill out the form below and we'll get back to you within 24 hours. All information is confidential and secure.
+                Use the secure form to reach us and we'll get back to you within 24 hours. All information is confidential and secure.
               </p>
             </div>
 
-            {/* Jotform iframe */}
-            <div className="w-full min-h-[600px]">
-              <iframe 
-                src="https://form.jotform.com/252375778323162"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                style={{ border: 'none' }}
-                title="Contact and Referral Form"
-                className="rounded-lg"
-              />
+            <div className="flex flex-col items-center gap-4 text-center">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 px-8" asChild>
+                <a href={QUICK_REFERRAL_URL} target="_blank" rel="noopener noreferrer">
+                  Open the Contact &amp; Referral Form
+                </a>
+              </Button>
+              <FormDisclaimer />
             </div>
           </div>
         </div>
