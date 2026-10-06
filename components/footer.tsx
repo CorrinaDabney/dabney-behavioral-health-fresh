@@ -139,6 +139,9 @@ export function Footer() {
               <Link href="/privacy" className="text-green-200 hover:text-white transition-colors">
                 Privacy Notice
               </Link>
+              <Link href="/notice-of-privacy-practices" className="text-green-200 hover:text-white transition-colors">
+                Notice of Privacy Practices
+              </Link>
             </div>
           </div>
         </div>
