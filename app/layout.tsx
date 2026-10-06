@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   title: 'Dabney Behavioral Health - Compassionate Mental Health Care',
   description: 'Professional mental health services including assessment, therapy, and telehealth. LGBTQ+ inclusive, compassionate care in a safe environment.',
   keywords: 'mental health, behavioral health, therapy, counseling, LGBTQ+, telehealth, Chicago',
+  // PREVIEW ONLY: keep the test site out of search engines
+  robots: { index: false, follow: false },
 }
 
 export default function RootLayout({
