@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { FormDisclaimer } from '@/components/form-disclaimer'
-import { NEW_PATIENT_INTAKE_URL, FAMILY_UPLOAD_URL } from '@/lib/form-links'
+import { QUICK_REFERRAL_URL, FAMILY_UPLOAD_URL } from '@/lib/form-links'
 export default function SchedulePage() {
   return (
     <div className="pt-20">
@@ -31,8 +31,8 @@ export default function SchedulePage() {
 
             <div className="flex flex-col items-center gap-4 text-center">
               <Button size="lg" className="bg-green-600 hover:bg-green-700 px-8" asChild>
-                <a href={NEW_PATIENT_INTAKE_URL} target="_blank" rel="noopener noreferrer">
-                  Open the New Patient Intake Form
+                <a href={QUICK_REFERRAL_URL} target="_blank" rel="noopener noreferrer">
+                  Start Your New Patient Forms
                 </a>
               </Button>
               <FormDisclaimer />
