@@ -7,3 +7,5 @@ export const APPLY_NOW_URL =
   'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=aQivVXGwc0KgaFzi9Z1tHaLYGdbT87FApq-Aumy5dWJUNko1NFRZQlNOTjJMTVc4VE9ITE9YNUZEMS4u'
 export const FAMILY_UPLOAD_URL =
   'https://dbhcc961.sharepoint.com/:f:/s/DBHHCFamilyUploads/IgBPx385Far-Ra0Hz-5PGioDAUDhtj1G9xloVoXC2P9yv1I'
+// Pathways to Success referral form (Jotform, added 10/15). Not part of the Microsoft forms move.
+export const PATHWAYS_REFERRAL_URL = 'https://form.jotform.com/262875131791059'

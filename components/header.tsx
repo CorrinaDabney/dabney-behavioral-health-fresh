@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Clinical Services', href: '/clinical-services' },
   { name: 'Contact/Referral', href: '/contact' },
+  { name: 'Pathways', href: '/pathways' },
   { name: 'Employment', href: '/employment' },
   { name: 'Staff', href: '/staff' },
   { name: 'Telehealth', href: '/telehealth' },
