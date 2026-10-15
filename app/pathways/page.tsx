@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Button } from '@/components/ui/button'
 import { FormDisclaimer } from '@/components/form-disclaimer'
 import { PATHWAYS_REFERRAL_URL } from '@/lib/form-links'
 
@@ -36,12 +35,32 @@ export default function PathwaysPage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-4 text-center">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 px-8" asChild>
-                <a href={PATHWAYS_REFERRAL_URL} target="_blank" rel="noopener noreferrer">
-                  Open the Pathways to Success Referral Form
+            {/* Jotform embed */}
+            <div className="w-full min-h-[900px]">
+              <iframe
+                src={PATHWAYS_REFERRAL_URL}
+                width="100%"
+                height="900"
+                frameBorder="0"
+                style={{ border: 'none' }}
+                title="Pathways to Success Referral Form"
+                className="rounded-lg"
+              />
+            </div>
+
+            <div className="flex flex-col items-center gap-4 text-center mt-6">
+              <p className="text-sm text-gray-600">
+                Having trouble with the form?{' '}
+                <a
+                  href={PATHWAYS_REFERRAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-700 underline"
+                >
+                  Open it in a new tab
                 </a>
-              </Button>
+                .
+              </p>
               <FormDisclaimer />
             </div>
           </div>
