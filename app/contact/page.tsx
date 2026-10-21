@@ -1,7 +1,19 @@
 
+import Link from 'next/link'
+
 export default function ContactPage() {
   return (
     <div className="pt-20">
+      {/* Pathways referral notice */}
+      <div className="bg-green-900 px-4 py-3 text-center">
+        <Link
+          href="/pathways"
+          className="text-sm sm:text-base font-medium text-white underline underline-offset-4 hover:text-green-200"
+        >
+          Pathways to Success referral from a CCSO? Use the Pathways Referral Form.
+        </Link>
+      </div>
+
       {/* Header */}
       <section className="py-16 bg-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

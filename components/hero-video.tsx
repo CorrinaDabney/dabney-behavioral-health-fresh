@@ -81,6 +81,15 @@ export function HeroVideo() {
                 Learn More
               </Link>
             </Button>
+            <Button
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
+              asChild
+            >
+              <Link href="/pathways">
+                Pathways (CCSO) Referral
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

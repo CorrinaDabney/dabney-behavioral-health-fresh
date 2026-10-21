@@ -30,17 +30,9 @@ export default function PathwaysPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-green-100 bg-white shadow-xl overflow-hidden">
             <div className="bg-green-900 px-6 py-6 sm:px-10 text-center">
-              <h2 className="text-2xl font-bold text-white mb-2">
+              <h2 className="text-2xl font-bold text-white">
                 Pathways to Success Referral Form
               </h2>
-              <p className="text-green-100 text-sm sm:text-base leading-relaxed">
-                Dabney Behavioral Health will contact you within 24-48 hours of receiving the form to process your referral.
-                You can also reach us at{' '}
-                <a href="tel:+17736516809" className="underline font-medium text-white">
-                  (773) 651-6809
-                </a>{' '}
-                with any questions or additional information.
-              </p>
             </div>
 
             <div className="px-2 py-4 sm:px-6 sm:py-6">
