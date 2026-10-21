@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button'
 import { 
   ClipboardList, 
@@ -7,12 +6,23 @@ import {
   User, 
   Pill, 
   Monitor,
-  ArrowRight 
+  Home,
+  ArrowRight
 } from 'lucide-react'
 import Link from 'next/link'
 import { CTASection } from '@/components/cta-section'
 
-const services = [
+type Service = {
+  slug: string
+  title: string
+  description: string
+  icon: typeof Heart
+  features: string[]
+  href?: string
+  linkLabel?: string
+}
+
+const services: Service[] = [
   {
     slug: 'assessment',
     title: 'Assessment Service',
@@ -97,6 +107,20 @@ const services = [
       'HIPAA compliant platform'
     ]
   },
+  {
+    slug: 'pathways-to-success',
+    title: 'Pathways to Success',
+    description: 'Services for youth referred through Pathways to Success.',
+    icon: Home,
+    href: '/pathways',
+    linkLabel: 'Make a Pathways referral',
+    features: [
+      'Intensive Home-Based',
+      'Therapeutic Mentoring',
+      'Family Peer Support',
+      'Respite'
+    ]
+  },
 ]
 
 export default function ClinicalServicesPage() {
@@ -161,10 +185,10 @@ export default function ClinicalServicesPage() {
                   </div>
 
                   <Link
-                    href={`/clinical-services/${service.slug}`}
+                    href={service.href ?? `/clinical-services/${service.slug}`}
                     className="inline-flex items-center text-green-600 hover:text-green-700 font-medium group/link"
                   >
-                    Learn More
+                    {service.linkLabel ?? 'Learn More'}
                     <ArrowRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
