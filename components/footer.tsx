@@ -1,4 +1,3 @@
-
 import Link from 'next/link'
 import { Facebook, Linkedin, X, Video, Youtube, MapPin, Phone, Mail } from 'lucide-react'
 
@@ -125,7 +124,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-green-700">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="text-sm text-green-200">
-              © 2024 Dabney Behavioral Health. All rights reserved.
+              © {new Date().getFullYear()} Dabney Behavioral Health. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-4 text-sm">
               <Link href="/clinical-services" className="text-green-200 hover:text-white transition-colors">
@@ -136,6 +135,9 @@ export function Footer() {
               </Link>
               <Link href="/telehealth" className="text-green-200 hover:text-white transition-colors">
                 Telehealth
+              </Link>
+              <Link href="/privacy" className="text-green-200 hover:text-white transition-colors">
+                Privacy Notice
               </Link>
             </div>
           </div>
