@@ -83,8 +83,7 @@ export function HeroVideo() {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="bg-white/20 border-white/30 text-white hover:bg-white/30 px-8 py-4 text-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
               asChild
             >
               <Link href="/pathways">
