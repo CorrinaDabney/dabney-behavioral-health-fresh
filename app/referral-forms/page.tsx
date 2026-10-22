@@ -14,13 +14,7 @@ import {
   Handshake,
   Briefcase,
 } from 'lucide-react'
-import {
-  REFERRAL_HERO,
-  CARD_NEW_PATIENT,
-  CARD_PATHWAYS,
-  CARD_REFERRAL,
-  CARD_CONTACT,
-} from '@/lib/referral-images'
+import { REFERRAL_HERO, CARD_NEW_PATIENT } from '@/lib/referral-images'
 
 export const metadata: Metadata = {
   title: 'Referral & Forms - Dabney Behavioral Health',
@@ -57,7 +51,8 @@ const cards: {
   title: string
   eyebrow: string
   icon: typeof Clock
-  photo: string
+  photo?: string
+  tint: string
   description: string
   rows?: InfoRow[]
   about?: { title: string; text: string }
@@ -69,6 +64,7 @@ const cards: {
     eyebrow: 'Become a patient',
     icon: UserPlus,
     photo: CARD_NEW_PATIENT,
+    tint: 'from-green-800 to-emerald-600',
     description:
       'This comprehensive and secure form is the first and most important step in beginning your care with us. Completing it thoroughly allows us to prepare for your first appointment and tailor our services to your specific needs.',
     rows: [
@@ -83,7 +79,7 @@ const cards: {
     title: 'Pathways Referral (CCSO)',
     eyebrow: 'For care coordinators',
     icon: Users,
-    photo: CARD_PATHWAYS,
+    tint: 'from-teal-800 to-green-600',
     description:
       'For Pathways to Success care coordinators. Dabney Behavioral Health will contact you and the family within 24 to 48 hours.',
     about: {
@@ -97,7 +93,7 @@ const cards: {
     title: 'Referral Form',
     eyebrow: 'Refer a client or loved one',
     icon: HeartHandshake,
-    photo: CARD_REFERRAL,
+    tint: 'from-green-900 to-lime-700',
     description:
       'Refer yourself, your child, a family member, or a client. This form takes about 3 minutes. Our intake team will call within 1 to 2 business days.',
     rows: [
@@ -112,7 +108,7 @@ const cards: {
     title: 'Contact Form',
     eyebrow: 'Business inquiries',
     icon: Mail,
-    photo: CARD_CONTACT,
+    tint: 'from-emerald-900 to-teal-600',
     description:
       'Have a question about our services, business partnerships, professional inquiries, or collaboration opportunities? Contact our team here.',
     rows: [
@@ -161,8 +157,12 @@ export default function ReferralFormsPage() {
                   key={card.title}
                   className="flex flex-col overflow-hidden rounded-xl border border-[#e7e2d0] bg-[#fbf9f1] shadow-sm"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={card.photo} alt="" className="h-[93px] w-full object-cover" />
+                  {card.photo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={card.photo} alt="" className="h-[93px] w-full object-cover" />
+                  ) : (
+                    <div className={`h-[93px] w-full bg-gradient-to-br ${card.tint}`} />
+                  )}
                   <div className="relative z-10 -mt-9 flex justify-center">
                     <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-green-900 ring-4 ring-[#fbf9f1]">
                       <Icon className="h-8 w-8 text-white" />
