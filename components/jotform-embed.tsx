@@ -5,6 +5,10 @@ import { useEffect, useRef, useState } from 'react'
 type JotformEmbedProps = {
   src: string
   title: string
+  /** Frame heights for [phone, small, wide] screens. Defaults suit the long Pathways form. */
+  heights?: [number, number, number]
+  /** If true, the form's own reported height replaces the starting height (use for short forms). */
+  useReportedHeight?: boolean
 }
 
 /**
@@ -14,10 +18,21 @@ type JotformEmbedProps = {
  * narrow screens. Measured on the live form (28 fields): about 2,850px at
  * phone width, 2,270px at ~490px wide, and 2,010px from ~770px up.
  */
-function heightForWidth(width: number) {
-  if (width <= 420) return 3250
-  if (width <= 560) return 2700
-  return 2350
+function heightForWidth(width: number, heights: [number, number, number]) {
+  if (width <= 420) return heights[0]
+  if (width <= 560) return heights[1]
+  return heights[2]
+}
+
+const DEFAULT_HEIGHTS: [number, number, number] = [3250, 2700, 2350]
+
+function isJotformOrigin(origin: string) {
+  try {
+    const host = new URL(origin).hostname
+    return host === 'jotform.com' || host.endsWith('.jotform.com')
+  } catch {
+    return false
+  }
 }
 
 /**
@@ -25,23 +40,31 @@ function heightForWidth(width: number) {
  * the height is sized for the full form, the frame can scroll as a last
  * resort, and if the form reports its own height we use that if it is larger.
  */
-export function JotformEmbed({ src, title }: JotformEmbedProps) {
+export function JotformEmbed({
+  src,
+  title,
+  heights = DEFAULT_HEIGHTS,
+  useReportedHeight = false,
+}: JotformEmbedProps) {
   const frameRef = useRef<HTMLIFrameElement>(null)
-  const [height, setHeight] = useState(2350)
+  const [height, setHeight] = useState(heights[2])
   const reported = useRef(0)
 
   useEffect(() => {
     const frame = frameRef.current
     if (!frame) return
 
-    const apply = () => setHeight(Math.max(heightForWidth(frame.clientWidth), reported.current))
+    const apply = () => {
+      const start = heightForWidth(frame.clientWidth, heights)
+      setHeight(useReportedHeight && reported.current ? reported.current : Math.max(start, reported.current))
+    }
     apply()
 
     const observer = new ResizeObserver(apply)
     observer.observe(frame)
 
     function onMessage(event: MessageEvent) {
-      if (event.origin !== 'https://form.jotform.com') return
+      if (!isJotformOrigin(event.origin)) return
       if (event.source !== frame?.contentWindow) return
       if (typeof event.data !== 'string') return
       const [action, value] = event.data.split(':')
@@ -59,7 +82,7 @@ export function JotformEmbed({ src, title }: JotformEmbedProps) {
       observer.disconnect()
       window.removeEventListener('message', onMessage)
     }
-  }, [])
+  }, [heights, useReportedHeight])
 
   return (
     <iframe
