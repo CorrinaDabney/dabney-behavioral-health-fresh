@@ -67,8 +67,8 @@ export function HeroVideo() {
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
               asChild
             >
-              <Link href="/schedule">
-                New Patient Forms
+              <Link href="/referral-forms">
+                Referral Forms
               </Link>
             </Button>
             <Button
@@ -78,7 +78,7 @@ export function HeroVideo() {
               asChild
             >
               <Link href="/clinical-services">
-                Learn More
+                Our Services
               </Link>
             </Button>
             <Button

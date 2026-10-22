@@ -111,18 +111,8 @@ export function IntakeProcess() {
                 className="bg-green-600 hover:bg-green-700"
                 asChild
               >
-                <Link href="/schedule">
-                  New Patient Forms
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-                asChild
-              >
-                <Link href="/contact">
-                  Contact Us First
+                <Link href="/referral-forms">
+                  Referral &amp; Forms
                 </Link>
               </Button>
             </div>
