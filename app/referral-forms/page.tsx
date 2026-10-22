@@ -132,7 +132,7 @@ export default function ReferralFormsPage() {
           preload="auto"
           poster={REFERRAL_HERO}
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute left-0 top-0 h-full w-[130%] max-w-none object-cover object-left"
         >
           <source src="/assets/dabney-hero-final.mp4" type="video/mp4" />
         </video>
