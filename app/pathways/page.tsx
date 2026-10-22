@@ -29,12 +29,6 @@ export default function PathwaysPage() {
       <section className="pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-green-100 bg-white shadow-xl overflow-hidden">
-            <div className="bg-green-900 px-6 py-6 sm:px-10 text-center">
-              <h2 className="text-2xl font-bold text-white">
-                Pathways to Success Referral Form
-              </h2>
-            </div>
-
             <div className="px-2 py-4 sm:px-6 sm:py-6">
               <JotformEmbed src={PATHWAYS_REFERRAL_URL} title="Pathways to Success Referral Form" />
             </div>
