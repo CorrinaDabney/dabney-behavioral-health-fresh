@@ -55,10 +55,10 @@ export function HeroVideo() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="space-y-6">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
             <span className="block text-white">Dabney Behavioral Health</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-green-100 drop-shadow max-w-2xl mx-auto">
+          <p className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-semibold text-green-100 drop-shadow max-w-2xl mx-auto">
             Compassionate, inclusive mental health care tailored to your unique journey
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -67,8 +67,8 @@ export function HeroVideo() {
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
               asChild
             >
-              <Link href="/schedule">
-                New Patient Forms
+              <Link href="/referral-forms">
+                Referral Forms
               </Link>
             </Button>
             <Button
@@ -78,7 +78,7 @@ export function HeroVideo() {
               asChild
             >
               <Link href="/clinical-services">
-                Learn More
+                Our Services
               </Link>
             </Button>
             <Button
