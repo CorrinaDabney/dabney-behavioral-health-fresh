@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
@@ -23,6 +24,8 @@ const navigation = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname() || '/'
+  const current = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +41,7 @@ export function Header() {
       isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white/80"
     )}>
       <div className="max-w-[2400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20">
           {/* Logo and Company Name */}
           <Link href="/" className="flex items-center space-x-3 shrink-0">
             <div className="relative w-12 h-12 flex-shrink-0">
@@ -50,7 +53,7 @@ export function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-xl xl:text-base min-[1440px]:text-lg min-[1536px]:text-xl min-[2300px]:text-2xl font-bold text-green-800 leading-tight whitespace-nowrap">
+              <h1 className="text-xl xl:text-base min-[1440px]:text-lg min-[1536px]:text-xl min-[2300px]:text-2xl font-[family-name:var(--font-display)] font-bold text-green-800 leading-tight whitespace-nowrap">
                 Dabney Behavioral Health
               </h1>
               <p className="text-base xl:text-xs min-[1440px]:text-sm min-[1536px]:text-base min-[2300px]:text-lg text-black leading-tight">
@@ -65,7 +68,10 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-1 min-[1440px]:px-1.5 min-[1700px]:px-2 min-[1920px]:px-2.5 py-2 text-xs min-[1440px]:text-[13px] min-[1536px]:text-sm min-[1700px]:text-[15px] min-[1920px]:text-base min-[2300px]:text-lg font-medium text-gray-700 rounded-lg whitespace-nowrap hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+                className={cn(
+                  "px-1 min-[1440px]:px-1.5 min-[1700px]:px-2 min-[1920px]:px-2.5 py-2 text-xs min-[1440px]:text-[13px] min-[1536px]:text-sm min-[1700px]:text-[15px] min-[1920px]:text-base min-[2300px]:text-lg font-medium rounded-lg whitespace-nowrap hover:bg-green-50 hover:text-green-700 transition-colors duration-200 border-b-2",
+                  current === item.href ? "text-green-800 border-green-600" : "text-gray-700 border-transparent"
+                )}
               >
                 {item.name}
               </Link>
