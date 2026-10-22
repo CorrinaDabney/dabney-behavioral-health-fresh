@@ -14,7 +14,7 @@ import {
   Handshake,
   Briefcase,
 } from 'lucide-react'
-import { REFERRAL_HERO, CARD_NEW_PATIENT } from '@/lib/referral-images'
+import { REFERRAL_HERO } from '@/lib/referral-images'
 
 export const metadata: Metadata = {
   title: 'Referral & Forms - Dabney Behavioral Health',
@@ -51,7 +51,6 @@ const cards: {
   title: string
   eyebrow: string
   icon: typeof Clock
-  photo?: string
   tint: string
   description: string
   rows?: InfoRow[]
@@ -63,7 +62,6 @@ const cards: {
     title: 'New Patient Form',
     eyebrow: 'Become a patient',
     icon: UserPlus,
-    photo: CARD_NEW_PATIENT,
     tint: 'from-green-800 to-emerald-600',
     description:
       'This comprehensive and secure form is the first and most important step in beginning your care with us. Completing it thoroughly allows us to prepare for your first appointment and tailor our services to your specific needs.',
@@ -126,12 +124,18 @@ export default function ReferralFormsPage() {
     <div className="pt-20 bg-[#f6f4ec]">
       {/* Banner */}
       <section className="relative overflow-hidden bg-green-950">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={REFERRAL_HERO}
-          alt=""
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={REFERRAL_HERO}
+          aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
-        />
+        >
+          <source src="/assets/dabney-hero-final.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/40 to-black/55" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center text-white">
           <h1 className={`${display} text-4xl sm:text-5xl lg:text-6xl font-bold drop-shadow-lg`}>
@@ -157,12 +161,7 @@ export default function ReferralFormsPage() {
                   key={card.title}
                   className="flex flex-col overflow-hidden rounded-xl border border-[#e7e2d0] bg-[#fbf9f1] shadow-sm"
                 >
-                  {card.photo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={card.photo} alt="" className="h-[93px] w-full object-cover" />
-                  ) : (
-                    <div className={`h-[93px] w-full bg-gradient-to-br ${card.tint}`} />
-                  )}
+                  <div className={`h-[93px] w-full bg-gradient-to-br ${card.tint}`} />
                   <div className="relative z-10 -mt-9 flex justify-center">
                     <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-green-900 ring-4 ring-[#fbf9f1]">
                       <Icon className="h-8 w-8 text-white" />
