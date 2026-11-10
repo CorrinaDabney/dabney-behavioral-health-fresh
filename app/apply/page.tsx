@@ -30,7 +30,7 @@ export default function ApplyPage() {
             {/* Jotform iframe */}
             <div className="w-full min-h-[800px]">
               <iframe 
-                src="https://form.jotform.com/252377462365160"
+                src="https://form.jotform.com/252379303634155"
                 width="100%"
                 height="800"
                 frameBorder="0"
